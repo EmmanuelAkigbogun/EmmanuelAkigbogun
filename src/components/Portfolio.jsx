@@ -9,8 +9,8 @@ export default function Portfolio() {
     title: "Software Engineer & Creative Developer",
     location: "Ife, Nigeria",
     email: "emmanuelakigbogun@gmail.com",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    github: "https://github.com/EmmanuelAkigbogun",
+    linkedin: "https://www.linkedin.com/in/emmanuel-akigbogun-1406a5224/",
     bio: "Self-taught software engineer with a deep love for mathematics, visual computing, and the art of problem-solving. I thrive at the intersection of code and creativity—from engineering vector math layouts to capturing raw detail as a biro artist.",
   };
 
@@ -20,34 +20,34 @@ export default function Portfolio() {
       description:
         "A browser-based design application built on real HTML elements. Powered by advanced vector mathematics, geometric calculations, and custom layout logic.",
       tags: ["React", "SVG", "Vector Maths", "HTML5"],
-      link: "https://vercel.app",
+      link: "https://akigbogun.vercel.app",
       image:
-        "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw.jpg",
+        "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw%20(4).png",
     },
     {
       title: "Interactive Chart Builder",
       description:
         "Dynamic tool rendering mathematical functions as visual graphs. Supports SVG and HTML Canvas rendering alongside custom base64 image processing.",
       tags: ["React", "HTML Canvas", "SVG", "Base64"],
-      link: "https://vercel.app",
+      link: "https://chart-lilac.vercel.app",
       image:
-        "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw%20(6).png",
+        "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw%20(7).png",
     },
     {
       title: "Luxerous Hairs",
       description:
         "A complete, highly responsive e-commerce platform selling beauty products. Built in tight collaboration with UI/UX design specifications.",
       tags: ["React.js", "JavaScript", "Responsive Design"],
-      link: "https://vercel.app",
+      link: "https://luxerous-hairs.vercel.app/",
       image:
-        "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw%20(4).png",
+        "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw.jpg",
     },
     {
       title: "Flooring Landing Page",
       description:
         "A pixel-perfect, interactive commercial landing page engineered for optimal technical execution and crisp visual aesthetics.",
       tags: ["JavaScript", "HTML5", "CSS3 Layouts"],
-      link: "https://Floorin-nu.vercel.app",
+      link: "https://Flooring-nu.vercel.app",
       image:
         "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw%20(5).png",
     },
