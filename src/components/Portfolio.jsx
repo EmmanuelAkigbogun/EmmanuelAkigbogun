@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./css/Portfolio.css";
-import { Images } from "../assets/images";
 
 export default function Portfolio() {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [nameColor, setNameColor] = useState(null);
+  const canvasRef = useRef(null);
+
   const profile = {
     name: "Emmanuel Akigbogun Ibukun",
     title: "Software Engineer & Creative Developer",
@@ -85,15 +87,51 @@ export default function Portfolio() {
     "Firebase",
   ];
 
+  /* ── Pixel-sampling handlers ── */
+  const handleAvatarLoad = (e) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    canvas.width = e.target.naturalWidth;
+    canvas.height = e.target.naturalHeight;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(e.target, 0, 0);
+  };
+
+  const handleAvatarMouseMove = (e) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = Math.floor((e.clientX - rect.left) * scaleX);
+    const y = Math.floor((e.clientY - rect.top) * scaleY);
+    try {
+      const ctx = canvas.getContext("2d");
+      const pixel = ctx.getImageData(x, y, 1, 1).data;
+      setNameColor(`rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`);
+    } catch {
+      /* CORS not ready yet — silently skip */
+    }
+  };
+
+  const handleAvatarMouseLeave = () => setNameColor(null);
+
   return (
     <div className="portfolio-container">
       {/* HEADER / HERO */}
-      {/* HEADER / HERO WITH AVATAR INTRO */}
       <header className="portfolio-header">
         <div className="intro-split">
           {/* Left Text Block */}
           <div className="intro-text-block">
-            <h1 className="profile-name">{profile.name}</h1>
+            <h1
+              className="profile-name"
+              style={{
+                color: nameColor || "var(--text-main)",
+                transition: nameColor ? "color 0.05s ease" : "color 0.5s ease",
+              }}
+            >
+              {profile.name}
+            </h1>
             <p className="profile-title">{profile.title}</p>
             <p className="profile-location">{profile.location}</p>
             <p className="profile-bio">{profile.bio}</p>
@@ -101,13 +139,17 @@ export default function Portfolio() {
 
           {/* Right Image Block */}
           <div className="profile-avatar-container">
+            {/* Hidden canvas used only for pixel sampling */}
+            <canvas ref={canvasRef} style={{ display: "none" }} />
+
             <img
-              /* Replace this link with your local asset path once you save your photo */
-              src={
-                "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw%20(9).jpg"
-              }
+              src="https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw%20(9).jpg"
               alt={profile.name}
               className="profile-avatar"
+              crossOrigin="anonymous"
+              onLoad={handleAvatarLoad}
+              onMouseMove={handleAvatarMouseMove}
+              onMouseLeave={handleAvatarMouseLeave}
             />
           </div>
         </div>
@@ -182,7 +224,6 @@ export default function Portfolio() {
           <div className="projects-grid">
             {projects.map((proj, idx) => (
               <div key={idx} className="project-card">
-                {/* Embedded Project Work Image Container */}
                 {proj.image && (
                   <div
                     className="project-image-container"
@@ -198,7 +239,6 @@ export default function Portfolio() {
                     </div>
                   </div>
                 )}
-
                 <div className="card-header">
                   <h3 className="project-name">{proj.title}</h3>
                   <a
@@ -351,7 +391,8 @@ export default function Portfolio() {
           © {new Date().getFullYear()} {profile.name}. Clean canvas build.
         </p>
       </footer>
-      {/* LIGHTBOX EXPAND OVERLAY MODAL */}
+
+      {/* LIGHTBOX MODAL */}
       {selectedImage && (
         <div className="modal-overlay" onClick={() => setSelectedImage(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
