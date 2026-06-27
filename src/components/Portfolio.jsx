@@ -27,6 +27,15 @@ export default function Portfolio() {
       image:
         "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw%20(6).png",
     },
+       {
+      title: "Luxerous Hairs",
+      description:
+        "A complete, highly responsive e-commerce platform selling beauty products. Built in tight collaboration with UI/UX design specifications.",
+      tags: ["React.js", "JavaScript", "Responsive Design"],
+      link: "https://luxerous-hairs.vercel.app/",
+      image:
+        "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/drag.png",
+    },
     {
       title: "Figma-Inspired Design Tool",
       description:
