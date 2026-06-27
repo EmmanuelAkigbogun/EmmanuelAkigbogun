@@ -25,7 +25,7 @@ export default function Portfolio() {
       tags: ["React.js", "JavaScript", "Responsive Design"],
       link: "https://luxerous-hairs.vercel.app/",
       image:
-        "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/drag.png",
+        "https://bagvusfmlvlenomoqzmn.supabase.co/storage/v1/object/public/uploads/53e465fb-f057-4f22-8001-8af029684332/7a12becb-1eb7-49d0-be4b-680deab93a56.png",
     },
     {
       title: "Figma-Inspired Design Tool",
