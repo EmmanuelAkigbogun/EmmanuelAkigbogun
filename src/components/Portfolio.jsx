@@ -16,7 +16,17 @@ export default function Portfolio() {
     bio: "Self-taught software engineer with a deep love for mathematics, visual computing, and the art of problem-solving. I thrive at the intersection of code and creativity—from engineering vector math layouts to capturing raw detail as a biro artist.",
   };
 
-  const projects = [
+  const projects = 
+    [
+          {
+      title: "Luxerous Hairs",
+      description:
+        "A complete, highly responsive e-commerce platform selling beauty products. Built in tight collaboration with UI/UX design specifications.",
+      tags: ["React.js", "JavaScript", "Responsive Design"],
+      link: "https://luxerous-hairs.vercel.app/",
+      image:
+        "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw%20(6).png",
+    },
     {
       title: "Figma-Inspired Design Tool",
       description:
@@ -34,15 +44,6 @@ export default function Portfolio() {
       link: "https://chart-lilac.vercel.app",
       image:
         "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw%20(7).png",
-    },
-    {
-      title: "Luxerous Hairs",
-      description:
-        "A complete, highly responsive e-commerce platform selling beauty products. Built in tight collaboration with UI/UX design specifications.",
-      tags: ["React.js", "JavaScript", "Responsive Design"],
-      link: "https://luxerous-hairs.vercel.app/",
-      image:
-        "https://raw.githubusercontent.com/EmmanuelAkigbogun/Portfolio/refs/heads/main/src/assets/draw.jpg",
     },
     {
       title: "Flooring Landing Page",
